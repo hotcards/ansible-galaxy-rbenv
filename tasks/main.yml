@@ -18,7 +18,7 @@
   tags: create_rbenv_plugins_directory
 
 - name: install rbenv plugins for selected users
-  git: repo={{ item[1].repo }} dest={{ rbenv_root }}/plugins/{{ item[1].name }} version={{ item[1].version }}
+  git: repo={{ item[1].repo }} dest={{ rbenv_root }}/plugins/{{ item[1].name }} version={{ item[1].version }} accept_hostkey=yes
   with_nested:
     - rbenv_users
     - rbenv_plugins
